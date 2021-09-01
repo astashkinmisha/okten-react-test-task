@@ -2,13 +2,15 @@ import {getMovies} from "../services/movies.api.service";
 import {useEffect} from "react";
 import FilmItem from "../components/FilmItem";
 import {useHistory} from "react-router";
+import FilmList from "../components/FilmList";
 
 export default function HomePage ({dispatch, movies, genres}) {
 const {results} = movies;
-useHistory();
+let history = useHistory();
+    console.log(movies);
 
-    let onFilmClick = (film) => {
-        history.push(`/movie/${film.id}`)
+    let onFilmClick = (movies) => {
+        history.push(`/movie/${movies.id}`)
     };
     return (
         <div>
@@ -17,7 +19,7 @@ useHistory();
                 results.map(value => <FilmItem key={value.id} results={value} genres={genres}/>)
             }
 
-            <FilmList onFilmClick={onFilmClick}/>
+            <FilmList onFilmClick={onFilmClick} movies={movies}/>
         </div>
     );
 
