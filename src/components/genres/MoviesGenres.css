@@ -1,0 +1,15 @@
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    justify-content: space-between;
+    background-color: #282c34;
+}
+.genres-box {
+
+    border: 1px solid black;
+    width: 32.5%;
+    font-size: 12px;
+    text-align: center;
+    background-color: #61dafb;
+}

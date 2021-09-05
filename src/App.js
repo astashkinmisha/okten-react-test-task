@@ -1,38 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
-import {useDispatch, useSelector} from "react-redux";
+// import logo from './logo.svg';
 import HomePage from "./pages/HomePage";
-import {useEffect} from "react";
-import {getMovies} from "./services/movies.api.service";
-import {GET_MOVIES} from "./redux/actionTypes";
-import {setMovies} from "./redux/actionCreators/getMoviesAction";
-import {getGenres} from "./services/genres.movie.service";
-import {setGenres} from "./redux/actionCreators/getGenresAction";
-
+import {BrowserRouter as Router, Route, Link, Switch} from "react-router-dom";
+import FilmItem from "./components/film-item/FilmItem";
+import PreFilmList from "./components/film-list/PreFilmList";
+import PreItemRender from "./components/film-item/PreItemRender";
 
 function App() {
-  let dispatch = useDispatch();
-  useEffect(() => {
-    getMovies().then(value => dispatch(setMovies({...value.data})))
-
-  },[dispatch])
-
-  useEffect(() => {
-    getGenres().then(value => dispatch(setGenres({...value.data})))
-  }, [dispatch])
-  let state = useSelector(state => state);
-  let {movies, genres} = state
-
-  console.log(movies, genres);
 
   return (
-    <div>
-      {
-        movies.map(value => <HomePage dispatch={dispatch} movies={value} genres={genres}  /> )
-      }
+    <Router>
+      <div>
+        <Link to={'/'}/>
+      </div>
+        <Switch>
+            <Route path={`/:id`} component={FilmItem} />
+            <Route path={'/'} component={HomePage} />
 
-
-    </div>
+      </Switch>
+<PreItemRender/>
+    </Router>
   );
 }
 
