@@ -1,16 +1,21 @@
 import FilmList from "../film-list/FilmList";
 import {getPageById} from "../../services/getPageById";
 import './MoviesGenres.css'
+import Header from "../../pages/Header/Header";
+import {setGenresId} from "../../redux/actionCreators/setGenresId";
+import {Badge} from "reactstrap";
 
 export default function MoviesGenres ({genres, dispatch}){
     console.log(genres);
 
     return (
-        <div className={'wrapper'}>
+        <div className={'genres-wrapper'}>
+
             {
              genres.map(value =>
                  <div className={'genres-box'}>
-                <h3 onClick={() => dispatch(getPageById(value.id))}>{value.name}</h3>
+                     <h5 onClick={() => {dispatch(getPageById(value.id))
+                dispatch(setGenresId(value.id))}}>{value.name}</h5>
 
                  </div>)
             }

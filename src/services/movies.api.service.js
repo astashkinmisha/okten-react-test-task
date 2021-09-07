@@ -1,6 +1,5 @@
 import {AXIOS} from './axios.config'
 import {setMovies} from "../redux/actionCreators/getMoviesAction";
-import axios from "axios";
 
 export const getMovies = () => {
     return async (dispatch) => {

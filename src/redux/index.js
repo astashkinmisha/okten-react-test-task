@@ -1,9 +1,5 @@
-import {applyMiddleware, createStore} from "redux";
-import thunk from "redux-thunk";
-import {reducer} from "./reducers/reducer";
+export * from './store/index'
+export * from './actionCreators/index'
+export * from './reducers/index'
+export * from './actionTypes/index'
 
-
-const store = createStore(reducer, applyMiddleware(thunk));
-
-
-export {store}

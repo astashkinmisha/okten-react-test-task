@@ -1,6 +1,7 @@
-import {GET_GENRES, GET_MOVIES, SET_PAGE} from "../actionTypes";
+import {GET_GENRES, GET_MOVIES, SET_GENRES_ID, SET_PAGE, SET_STAR} from "../actionTypes";
 
-const initialState = {movies: [], genres: [], pages: []}
+
+const initialState = {movies: [], genres: [], pages: [], stars: 0, genresId: []}
 
 function reducer(state = initialState, action) {
 switch (action.type) {
@@ -21,6 +22,12 @@ switch (action.type) {
         return {
             ...state, movies: [{...action.payload}]
         }
+    }
+    case SET_STAR: {
+        return {...state, stars: action.payload}
+    }
+    case SET_GENRES_ID: {
+        return {...state, genresId: action.payload}
     }
     default:
         return state;

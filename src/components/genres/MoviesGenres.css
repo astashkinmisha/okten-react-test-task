@@ -1,15 +1,25 @@
-.wrapper {
+.genres-wrapper {
     display: flex;
     flex-wrap: wrap;
     box-sizing: border-box;
-    justify-content: space-between;
-    background-color: #282c34;
+    justify-content: space-evenly;
+
 }
 .genres-box {
 
     border: 1px solid black;
-    width: 32.5%;
+    width: 75px;
+    height: 25px;
     font-size: 12px;
     text-align: center;
-    background-color: #61dafb;
+    background-color: cornflowerblue;
+    margin: 5px;
+    border-radius: 5px;
+
+
+}
+h5 {
+    margin-top: 5px;
+    font-size: 9px;
+    color: white;
 }
