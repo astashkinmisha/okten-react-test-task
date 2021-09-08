@@ -1,5 +1,8 @@
-.pre-list-wrapper {
+.film-item-box {
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
+    width: 30%;
+
 }
+
+

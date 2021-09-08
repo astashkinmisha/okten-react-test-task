@@ -1,9 +1,9 @@
 import {Link} from "react-router-dom";
+import './film-item.css';
 
 import {useHistory} from "react-router";
 import {useDispatch, useSelector} from "react-redux";
 import {Rating, RatingView} from "react-simple-star-rating";
-import {useState} from "react";
 import {setRating} from "../../redux/actionCreators/setStarToFilm";
 
 export default function FilmItem ({results}) {
@@ -12,7 +12,6 @@ export default function FilmItem ({results}) {
   let dispatch = useDispatch();
   const stars = useSelector(state => state.stars)
     console.log( stars );
-    // console.log( history.location.state );
   const {location:{state:{id, original_title, release_date, overview, poster_path, vote_average, vote_count}}} = history;
 
 
@@ -22,13 +21,14 @@ export default function FilmItem ({results}) {
   const imgBuilder = (posterPath, size) => `https://image.tmdb.org/t/p/w${size}${posterPath}`
 
     return (
-        <div>
+        <div className={'film-item-box'}>
           <p>Film id: {id}</p>
           <h2>Title: {original_title}</h2>
-          <h3>Date relesed: {release_date}</h3>
-          <span>Overview: {overview}</span>
           {<img src={`https://image.tmdb.org/t/p/w200${poster_path}`} alt={`${original_title} poster`}/>}
+          <h3>Date released: {release_date}</h3>
           <Rating onClick={() => dispatch(setRating(vote_average))} ratingValue={stars} size={14} stars={10}/>
+          <p><i>Total votes: {vote_count}</i></p>
+          <span><i><b>Overview:</b> {overview}</i></span>
         </div>
     );
 }

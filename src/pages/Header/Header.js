@@ -34,6 +34,9 @@ export default function  Header(props) {
     return (
         <div className={darkMode ? "dark-mode" : "light-mode"}>
             <nav>
+                <div>
+                    <h3>Welcome</h3>
+                </div>
                 <div className="toggle-container">
                     <span style={{ color: darkMode ? "grey" : "yellow" }}>☀︎</span>
                     <span className="toggle">

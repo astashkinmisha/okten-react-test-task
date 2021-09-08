@@ -1,6 +1,6 @@
 import FilmList from "./FilmList";
 import Footer from "../../pages/Footer/Footer";
-import './FilmList.css'
+import './pre-list-film.css'
 
 export default function PreFilmList ({dispatch, movies}){
     let {results, page,total_pages} = movies;

@@ -99,6 +99,7 @@ input[type="checkbox"].checkbox + label {
     transition: color 0.3s ease;
     margin-top: 4px;
     margin-right: 2px;
+    ;
 }
 
 .toggle-container > span:last-child {
