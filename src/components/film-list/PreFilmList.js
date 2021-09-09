@@ -7,7 +7,7 @@ export default function PreFilmList ({dispatch, movies}){
     return (
         <div className={'pre-list-wrapper'}>
             {
-                results.map(value => <FilmList dispatch={dispatch} results={value}/>)
+                results.map(value => <FilmList key={value.id} dispatch={dispatch} results={value}/>)
             }
             <Footer movies={movies} dispatch={dispatch}/>
         </div>

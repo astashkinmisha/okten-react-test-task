@@ -6,7 +6,6 @@ import {setGenresId} from "../../redux/actionCreators/setGenresId";
 import {Badge} from "reactstrap";
 
 export default function MoviesGenres ({genres, dispatch}){
-    console.log(genres);
 
     return (
         <div className={'genres-wrapper'}>

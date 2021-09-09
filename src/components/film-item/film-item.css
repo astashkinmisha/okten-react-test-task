@@ -1,8 +1,4 @@
-.film-item-box {
-    display: flex;
-    flex-wrap: wrap;
-    width: 30%;
-
+film-item-box > img {
+    margin-left: 25%;
 }
-
 

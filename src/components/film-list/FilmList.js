@@ -10,9 +10,10 @@ export default function FilmList ({results}){
         <Link to={{pathname: `/${id}`, state: results}} className={'link-box'}>
                     <p>{id}</p>
                     <h2>Title: {original_title}</h2>
-                    {<img src={`https://image.tmdb.org/t/p/w200${poster_path}`} alt={`${original_title} poster`}/>}
+                    {<img src={`https://image.tmdb.org/t/p/w200${poster_path}`} alt={`${original_title} poster`} className={'img-main'}/>}
                     <h3>Date released: {release_date}</h3>
                     <RatingView ratingValue={vote_average} size={14} stars={10}/>
+                    <p>Count: {vote_average}</p>
         </Link>
                 </div>
             </div>

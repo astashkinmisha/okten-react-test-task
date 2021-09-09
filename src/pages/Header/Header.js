@@ -36,6 +36,7 @@ export default function  Header(props) {
             <nav>
                 <div>
                     <h3>Welcome</h3>
+
                 </div>
                 <div className="toggle-container">
                     <span style={{ color: darkMode ? "grey" : "yellow" }}>☀︎</span>
@@ -53,8 +54,12 @@ export default function  Header(props) {
                     {/* <button onClick={() => setDarkMode(prevMode => !prevMode)}>
           Toggle
         </button> */}
+                    <div className={'hardcoded-block'}>
+                        user
+                    </div>
                 </div>
             </nav>
+
             {props.children}
         </div>
     );

@@ -10,7 +10,7 @@ function App() {
   return (
     <Router>
         <Header>
-      <div>
+      <div className={'main-wrapper'}>
           <Link to={'/'}/>
       </div>
         <Switch>

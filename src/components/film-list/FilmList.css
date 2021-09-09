@@ -1,5 +1,6 @@
 .list-wrapper {
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
 }
 .film-box {
@@ -7,12 +8,13 @@
     border: 1px solid black;
     margin-top: 5px;
 
-
 }
-
 
 .link-box {
     text-decoration: none;
     color: #ac94a8
 
+}
+.img-main {
+    width: 70%;
 }
